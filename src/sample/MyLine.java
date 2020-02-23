@@ -32,6 +32,10 @@ public class MyLine extends MyShape {
         }
     }
 
+    public String toString() {
+        return getClass().getName() + "\nLength: " + Double.toString(this.getLength()) + "\nAngle: " + Double.toString(this.get_xAngle());
+    }
+
     public void draw(GraphicsContext gc) {
         gc.strokeLine(this.x, this.y, this.xEnd, this.yEnd);
     }

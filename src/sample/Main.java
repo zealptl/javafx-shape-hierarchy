@@ -52,6 +52,8 @@ public class Main extends Application {
         System.out.println(line1.get_xAngle());
         System.out.println(line2.get_xAngle());
 
+        System.out.println(line1.toString());
+
         root.getChildren().add(canvas);
         Scene sc = new Scene(root, w, h);
         primaryStage.setScene(sc);
