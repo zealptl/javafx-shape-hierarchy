@@ -3,8 +3,8 @@ package sample;
 import javafx.scene.canvas.GraphicsContext;
 
 public class MyLine extends MyShape {
-    protected int xEnd;
-    protected int yEnd;
+    private double xEnd;
+    private double yEnd;
 
     public MyLine() {
         super(0,0);
@@ -12,7 +12,7 @@ public class MyLine extends MyShape {
         this.yEnd = 0;
     }
 
-    public MyLine(int x, int y, int xEnd, int yEnd) {
+    public MyLine(double x, double y, double xEnd, double yEnd) {
         super(x, y);
         this.xEnd = xEnd;
         this.yEnd = yEnd;
