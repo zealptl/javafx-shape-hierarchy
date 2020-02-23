@@ -40,8 +40,18 @@ public class Main extends Application {
         double hex3Len = circle2Len/2;
         fillHexagon(w/2,h/2, hex3Len, gc);
         gc.strokeRect(50, 50, w - 100, h - 100);
-        gc.strokeLine(50,50, w - 50, h - 50);
-        gc.strokeLine(w - 50,50, 50, h - 50);
+        MyLine line1 = new MyLine(50, 50, w - 50, h - 50);
+        line1.draw(gc);
+
+        MyLine line2 = new MyLine(w - 50, 50,50, h - 50);
+        line2.draw(gc);
+
+
+        System.out.println(line1.getLength());
+        System.out.println(line2.getLength());
+        System.out.println(line1.get_xAngle());
+        System.out.println(line2.get_xAngle());
+
         root.getChildren().add(canvas);
         Scene sc = new Scene(root, w, h);
         primaryStage.setScene(sc);

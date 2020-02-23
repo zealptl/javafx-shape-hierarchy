@@ -1,8 +1,13 @@
 package sample;
 
 public class MyShape {
-    private int x;
-    private int y;
+    protected int x;
+    protected int y;
+
+    public MyShape() {
+        this.x = 0;
+        this.y = 0;
+    }
 
     public MyShape(int x, int y) {
         this.x = x;
