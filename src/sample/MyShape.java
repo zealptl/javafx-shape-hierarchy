@@ -1,8 +1,12 @@
 package sample;
 
-public class MyShape {
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
+public abstract class MyShape {
     protected double x;
     protected double y;
+    protected MyColor color;
 
     public MyShape() {
         this.x = 0;
@@ -21,4 +25,12 @@ public class MyShape {
     public double getY() { return y; }
 
     public void setY(double y) { this.y = y; }
+
+    public MyColor getColor() { return color; }
+
+    public void setColor(MyColor color) { this.color = color; }
+
+    public abstract String toString();
+
+    public abstract void draw(GraphicsContext gc);
 }

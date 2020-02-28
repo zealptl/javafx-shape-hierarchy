@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 
 public class MyCircle extends MyShape {
     private double rad;
+
     public MyCircle() {
         super(0,0);
         this.rad = 0;

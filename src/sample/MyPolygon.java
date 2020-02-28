@@ -31,7 +31,7 @@ public class MyPolygon extends MyShape {
     }
 
     public double getAngle() {
-        return ((sides - 2) * 180) / sides;
+        return (double)((sides - 2) * 180) / sides;
     }
 
     public String toString() {
