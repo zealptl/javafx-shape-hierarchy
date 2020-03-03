@@ -24,6 +24,7 @@ public class Main extends Application {
         gc.setFill(MyColor.LIGHTGRAY.getColor());
         double hex1Len = h/3;
         MyPolygon p1 = new MyPolygon(centerX,centerY,6,hex1Len);
+        p1.drawStroke(gc);
         p1.draw(gc);
         System.out.println(p1.toString());
 

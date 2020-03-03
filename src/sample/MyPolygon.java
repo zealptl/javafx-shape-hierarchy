@@ -50,7 +50,16 @@ public class MyPolygon extends MyShape {
         gc.fillPolygon(xPoints, yPoints, this.sides);
     }
 
-}
+    public void drawStroke(GraphicsContext gc) {
+        double[] xPoints = new double[sides];
+        double[] yPoints = new double[sides];
 
-//pointX[i] = ( sin( i / n * 2 * PI ) * radius ) + xOffset;
-//pointY[i] = ( cos( i / n * 2 * PI ) * radius ) + yOffset;
+        for (int i = 0; i < sides; i++) {
+            xPoints[i] = (Math.sin((double) i / sides * 2 * Math.PI) * length) + x;
+            yPoints[i] = (Math.cos((double) i / sides * 2 * Math.PI) * length) + y;
+        }
+
+        gc.strokePolygon(xPoints, yPoints, this.sides);
+    }
+
+}
