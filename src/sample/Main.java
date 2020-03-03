@@ -5,8 +5,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 
@@ -57,11 +55,19 @@ public class Main extends Application {
         System.out.println("-------\n" + p3.toString());
 
 
-        gc.strokeRect(50, 50, w - 100, h - 100);
-        MyLine line1 = new MyLine(50, 50, w - 50, h - 50);
-        line1.draw(gc);
-        MyLine line2 = new MyLine(w - 50, 50,50, h - 50);
-        line2.draw(gc);
+        MyLine topBorder = new MyLine(w*0.05, h*0.05, w - w*0.05, h*0.05);
+        MyLine rightBorder = new MyLine(w - w*0.05, h*0.05, w - w*0.05, h - h*0.05);
+        MyLine bottomBorder = new MyLine(w - w*0.05, h - h*0.05, w*0.05, h - h*0.05);
+        MyLine leftBorder = new MyLine(w*0.05, h - h*0.05, w*0.05, h*0.05);
+        MyLine diagonalLeft = new MyLine(w*0.05, h*0.05, w - w*0.05, h - h*0.05);
+        MyLine diagonalRight = new MyLine(w - w*0.05, h*0.05, w*0.05, h - h*0.05);
+
+        topBorder.draw(gc);
+        rightBorder.draw(gc);
+        bottomBorder.draw(gc);
+        leftBorder.draw(gc);
+        diagonalLeft.draw(gc);
+        diagonalRight.draw(gc);
 
         root.getChildren().add(canvas);
         Scene sc = new Scene(root, w, h);
