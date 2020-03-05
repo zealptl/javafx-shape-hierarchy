@@ -11,7 +11,6 @@ public class MyLine extends MyShape {
         this.xEnd = 0;
         this.yEnd = 0;
     }
-
     public MyLine(double x, double y, double xEnd, double yEnd) {
         super(x, y);
         this.xEnd = xEnd;
@@ -21,7 +20,6 @@ public class MyLine extends MyShape {
     public double getLength() {
         return Math.sqrt(Math.pow(x - xEnd, 2) + Math.pow(y - yEnd, 2));
     }
-
     public double get_xAngle() {
         if(this.y == this.yEnd) {
             return 0;
@@ -35,8 +33,8 @@ public class MyLine extends MyShape {
     public String toString() {
         return getClass().getName() + "\nLength: " + Double.toString(this.getLength()) + "\nAngle: " + Double.toString(this.get_xAngle());
     }
-
     public void draw(GraphicsContext gc) {
+        gc.setStroke(this.color.getColor());
         gc.strokeLine(this.x, this.y, this.xEnd, this.yEnd);
     }
 

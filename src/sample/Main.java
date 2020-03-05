@@ -7,7 +7,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 
-
 public class Main extends Application {
 
     @Override
@@ -21,48 +20,43 @@ public class Main extends Application {
         double centerX = (double) w/2;
         double centerY = (double) h/2;
 
-        gc.setFill(MyColor.LIGHTGRAY.getColor());
         double hex1Len = h/3;
-        MyPolygon p1 = new MyPolygon(centerX,centerY,6,hex1Len);
-        p1.drawStroke(gc);
-        p1.draw(gc);
-        System.out.println(p1.toString());
+        MyPolygon hex1 = new MyPolygon(centerX,centerY,6,hex1Len);
+        hex1.setColor(MyColor.LIGHTGRAY);
+        hex1.drawStroke(gc);
+        hex1.draw(gc);
+        System.out.println(hex1.toString());
 
-
-        gc.setFill(MyColor.YELLOW.getColor());
         double circle1Len = Math.sqrt(Math.pow(hex1Len, 2) - Math.pow(hex1Len/2, 2));
         MyCircle circ1 = new MyCircle(centerX, centerY, circle1Len);
+        circ1.setColor(MyColor.YELLOW);
         circ1.draw(gc);
         System.out.println("-------\n" + circ1.toString());
 
-
-        gc.setFill(MyColor.LIGHTGREEN.getColor());
         double hex2Len = circle1Len;
-        MyPolygon p2 = new MyPolygon(centerX, centerY, 6, hex2Len);
-        p2.draw(gc);
-        System.out.println("-------\n" + p2.toString());
+        MyPolygon hex2 = new MyPolygon(centerX, centerY, 6, hex2Len);
+        hex2.setColor(MyColor.LIGHTGREEN);
+        hex2.draw(gc);
+        System.out.println("-------\n" + hex2.toString());
 
-        gc.setFill(MyColor.LIGHTPINK.getColor());
         double circle2Len = Math.sqrt(Math.pow(hex2Len, 2) - Math.pow(hex2Len/2, 2));
         MyCircle circ2 = new MyCircle(centerX, centerY, circle2Len);
+        circ2.setColor(MyColor.LIGHTPINK);
         circ2.draw(gc);
         System.out.println("-------\n" + circ2.toString());
 
-
-        gc.setFill(MyColor.LIGHTBLUE.getColor());
         double hex3Len = circle2Len;
         MyPolygon p3 = new MyPolygon(centerX, centerY, 6, hex3Len);
+        p3.setColor(MyColor.LIGHTBLUE);
         p3.draw(gc);
         System.out.println("-------\n" + p3.toString());
 
-
-        MyLine topBorder = new MyLine(w*0.05, h*0.05, w - w*0.05, h*0.05);
-        MyLine rightBorder = new MyLine(w - w*0.05, h*0.05, w - w*0.05, h - h*0.05);
-        MyLine bottomBorder = new MyLine(w - w*0.05, h - h*0.05, w*0.05, h - h*0.05);
-        MyLine leftBorder = new MyLine(w*0.05, h - h*0.05, w*0.05, h*0.05);
-        MyLine diagonalLeft = new MyLine(w*0.05, h*0.05, w - w*0.05, h - h*0.05);
-        MyLine diagonalRight = new MyLine(w - w*0.05, h*0.05, w*0.05, h - h*0.05);
-
+        MyLine topBorder = new MyLine(w*0.05, h*0.05, w*0.95, h*0.05);
+        MyLine rightBorder = new MyLine(w*0.95, h*0.05, w*0.95, h*0.95);
+        MyLine bottomBorder = new MyLine(w*0.95, h*0.95, w*0.05, h*0.95);
+        MyLine leftBorder = new MyLine(w*0.05, h*0.95, w*0.05, h*0.05);
+        MyLine diagonalLeft = new MyLine(w*0.05, h*0.05, w*0.95, h*0.95);
+        MyLine diagonalRight = new MyLine(w*0.95, h*0.05, w*0.05, h*0.95);
         topBorder.draw(gc);
         rightBorder.draw(gc);
         bottomBorder.draw(gc);

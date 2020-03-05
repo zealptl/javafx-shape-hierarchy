@@ -54,8 +54,5 @@ public enum  MyColor {
         return c;
     }
 
-    public void setColor(int r, int g, int b) {
-        c.rgb(r,g,b);
-    }
 
 }
