@@ -12,7 +12,8 @@ public enum  MyColor {
     LIGHTPINK,
     LIGHTGRAY,
     MAGENTA,
-    YELLOW;
+    YELLOW,
+    BIEGE;
 
     Color c;
 
@@ -44,6 +45,9 @@ public enum  MyColor {
                 break;
             case 8:
                 this.c = Color.YELLOW;
+                break;
+            case 9:
+                this.c = Color.BEIGE;
                 break;
             default:
                 this.c = null;

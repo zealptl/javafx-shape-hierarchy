@@ -4,7 +4,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
 
-public class MyShape {
+public abstract class MyShape {
 
     protected double x;
     protected double y;
@@ -28,9 +28,6 @@ public class MyShape {
     public MyColor getColor() { return color; }
     public void setColor(MyColor color) { this.color = color; }
 
-    public String toString() { return this.getClass().getName(); }
-    public void draw(GraphicsContext gc, Canvas canvas) {
-        gc.setFill(this.color.getColor());
-        gc.fillRect(0,0, canvas.getWidth(), canvas.getHeight());
-    }
+    public abstract String toString();
+    public abstract void draw(GraphicsContext gc);
 }
